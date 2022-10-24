@@ -17,19 +17,19 @@ student2 = z1.Student("basia", [30, 40, 60, 20, 40, 35, 15])
 print(student2.is_passed())
 
 biblioteka1 = z2.Library('latowice', 'zielona',
-                      '40-150', '8:00-16:00', '123123123')
+                         '40-150', '8:00-16:00', '123123123')
 biblioteka2 = z2.Library('zory', 'niebieska',
-                      '30-120', '8:00-16:00', '321321321')
+                         '30-120', '8:00-16:00', '321321321')
 
 pracownik1 = z2.Employee('agata', 'krzykala', '10.10.2022',
-                      '10.08.2000', 'katowice', 'czerwona',
-                      '40-250', '234234234')
+                         '10.08.2000', 'katowice', 'czerwona',
+                         '40-250', '234234234')
 pracownik2 = z2.Employee('jakub', 'marzec', '15.09.2022',
-                      '01.03.2000', 'jastrzebie', 'pszyczynska',
-                      '33-222', '765432143')
+                         '01.03.2000', 'jastrzebie', 'pszyczynska',
+                         '33-222', '765432143')
 pracownik3 = z2.Employee('jan', 'nowak', '08.08.2022',
-                      '10.08.2002', 'zory', 'zorska',
-                      '44-444', '987987987')
+                         '10.08.2002', 'zory', 'zorska',
+                         '44-444', '987987987')
 
 ksiazka1 = z2.Book(biblioteka1, '20.04.2017', 'Janina', "Nowakowa", '303')
 ksiazka2 = z2.Book(biblioteka2, '13.76.2019', 'Janina', "Kowalska", '201')
@@ -41,9 +41,10 @@ student1 = z2.Student('123123')
 student2 = z2.Student('123345')
 student3 = z2.Student('123789')
 
-zamowienie1 = z2.Order(pracownik3, student1, [ksiazka1, ksiazka2], "15.10.2022")
+zamowienie1 = z2.Order(pracownik3, student1, [ksiazka1, ksiazka2],
+                       "15.10.2022")
 zamowienie2 = z2.Order(pracownik2, student2,
-                    [ksiazka2, ksiazka4, ksiazka5], "16.10.2022")
+                       [ksiazka2, ksiazka4, ksiazka5], "16.10.2022")
 
 print(zamowienie2)
 

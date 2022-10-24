@@ -16,10 +16,3 @@ class Student:
             return True
         else:
             return False
-
-
-student1 = Student("ania", [50, 40, 60, 60, 70, 80, 100])
-student1.is_passed()
-
-student2 = Student("basia", [30, 40, 60, 20, 40, 35, 15])
-student2.is_passed()

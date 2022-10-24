@@ -76,35 +76,3 @@ class Order():
     \n student: {self.student},
     \n ksiazka: {self.books},
     \n data zamowienia: {self.order_date}\n"""
-
-
-biblioteka1 = Library('latowice', 'zielona',
-                      '40-150', '8:00-16:00', '123123123')
-biblioteka2 = Library('zory', 'niebieska',
-                      '30-120', '8:00-16:00', '321321321')
-
-pracownik1 = Employee('agata', 'krzykala', '10.10.2022',
-                      '10.08.2000', 'katowice', 'czerwona',
-                      '40-250', '234234234')
-pracownik2 = Employee('jakub', 'marzec', '15.09.2022',
-                      '01.03.2000', 'jastrzebie', 'pszyczynska',
-                      '33-222', '765432143')
-pracownik3 = Employee('jan', 'nowak', '08.08.2022',
-                      '10.08.2002', 'zory', 'zorska',
-                      '44-444', '987987987')
-
-ksiazka1 = Book(biblioteka1, '20.04.2017', 'Janina', "Nowakowa", '303')
-ksiazka2 = Book(biblioteka2, '13.76.2019', 'Janina', "Kowalska", '201')
-ksiazka3 = Book(biblioteka1, '15.06.2020', 'Mariusz', 'Pudzianowski', '404')
-ksiazka4 = Book(biblioteka2, '13.09.2021', 'Kacper', 'Chudy', '201')
-ksiazka5 = Book(biblioteka1, '11.11.2011', 'Ida', 'Lipa', '130')
-
-student1 = Student('123123')
-student2 = Student('123345')
-student3 = Student('123789')
-
-zamowienie1 = Order(pracownik3, student1, [ksiazka1, ksiazka2], "15.10.2022")
-zamowienie2 = Order(pracownik2, student2,
-                    [ksiazka2, ksiazka4, ksiazka5], "16.10.2022")
-
-print(zamowienie2)

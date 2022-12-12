@@ -9,10 +9,14 @@ Created on Mon Nov 14 15:08:49 2022
 import cv2
 import numpy as np
 
-cap = cv2.VideoCapture('rundaa.MP4')
+cap = cv2.VideoCapture('kolory.MP4')
 
 fourcc = cv2.VideoWriter_fourcc(*'MP4V')
-video_output = cv2.VideoWriter('output2.mp4', fourcc, 50.0, (1920, 1080))
+video_output = cv2.VideoWriter('outputstatic2.mp4', fourcc, 50.0, (1920, 1080))
+fgbg = cv2.createBackgroundSubtractorMOG2()
+
+# kernel_o = np.ones((27,27),np.uint8)
+# kernel_c = np.ones((36,36),np.uint8)
 
 while (1):
 
@@ -44,8 +48,18 @@ while (1):
 
     mask = mask_blue + mask_red + mask_red1
 
+    fgmask = fgbg.apply(frame)
+
     # Bitwise-AND mask and original image
-    res = cv2.bitwise_and(frame, frame, mask=mask)
+    res = cv2.bitwise_and(frame, frame,
+                          mask=((mask_blue | mask_red | mask_red1) & fgmask))
+
+    # rgb_frame = cv2.cvtColor(res, cv2.COLOR_HSV2BGR)
+
+    # removing noise from the frame using morphology
+    # cleanedup_frame = cv2.morphologyEx(cv2.morphologyEx(
+    # rgb_frame, cv2.MORPH_OPEN, kernel_o),
+    # cv2.MORPH_CLOSE, kernel_c)
 
     video_output.write(res)
 

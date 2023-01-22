@@ -1,15 +1,14 @@
-from hyperparam import Args
+from hyperparam import Args     
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
 args = Args()
 
 train_datagen = ImageDataGenerator(
-    rotation_range=15,
-    width_shift_range=0.2,
-    height_shift_range=0.14,
-    horizontal_flip=True
+    rotation_range = 15,
+    width_shift_range = 0.2,
+    height_shift_range = 0.14,
+    horizontal_flip = True
 )
-
 
 def train():
     train_generator = train_datagen.flow_from_directory(
@@ -29,3 +28,4 @@ def valid():
         class_mode='categorical'
     )
     return validation_generator
+

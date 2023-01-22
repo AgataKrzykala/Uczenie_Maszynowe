@@ -1,1 +1,1 @@
-# Uczenie_Maszynowe_Agata_Krzykala
+# Uczenie_maszynowe_JM
